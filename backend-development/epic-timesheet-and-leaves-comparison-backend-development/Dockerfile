@@ -7,7 +7,7 @@ WORKDIR /app
 COPY ["package.json", "package-lock.json", "./"]
 RUN ls
 RUN npm install
-RUN npm nodemon -y
+RUN npm install nodemon -y
    
 COPY . .
 
