@@ -16,5 +16,4 @@ services:
     image: "hajjjat2004/epc"
     ports:
       - "3010:3010"
-    links:
-      - "backend"
+   
