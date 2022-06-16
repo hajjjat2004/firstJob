@@ -13,7 +13,7 @@ pipeline {
             steps{
                script { 
                    sh 'docker-compose up -d'
-                   sh 'docker run -d --restart unless-stopped hajjjat2004/epc'
+                   sh 'docker ps -a'
                         
                    }
               
