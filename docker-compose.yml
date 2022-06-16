@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  backend-development:
+    
+    build:
+      context: ./backend-development
+      dockerfile: ./Dockerfile
+    image: "hajjjat2004/epc"
+    ports:
+      - "3010:3010"
+  frontend-development:
+    build:
+      context: ./frontend-development
+      dockerfile: ./Dockerfile
+    image: "hajjjat2004/epc"
+    ports:
+      - "3010:3010"
+    links:
+      - "backend"
