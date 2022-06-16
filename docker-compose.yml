@@ -6,14 +6,14 @@ services:
     build:
       context: ./backend-development
       dockerfile: ./Dockerfile
-    image: "hajjjat2004/epc"
+    image: node:12.18.3""
     ports:
       - "3010:3010"
   frontend-development:
     build:
       context: ./frontend-development
       dockerfile: ./Dockerfile
-    image: "hajjjat2004/epc"
+    image: "node:12.18.3"
     ports:
       - "3010:3010"
    
