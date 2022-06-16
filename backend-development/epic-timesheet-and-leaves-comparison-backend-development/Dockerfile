@@ -7,6 +7,8 @@ WORKDIR /app
 COPY ["package.json", "package-lock.json", "./"]
 RUN ls
 RUN npm install --production
+RUN npm nodemon -y
+   
 COPY . .
 
 EXPOSE 3010
