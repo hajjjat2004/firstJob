@@ -1,10 +1,7 @@
 pipeline {
-     environment {
-       dockerimagename = "hajjjat2004/nodetest"
-       dockerImage = ""
-     }
-    agent any
     
+    agent { label 'ci-cd' }
+  
     stages {
         stage('Checkout Source') {
             steps {
