@@ -12,7 +12,7 @@ pipeline {
         stage('start container') {
             steps{
                script { 
-                   sh 'sudo cd /home/jenkins/firstjob'
+                   sh 'cd /home/jenkins/firstjob'
                    sh 'docker-compose up -d'
                    sh 'docker ps -a'
                         
