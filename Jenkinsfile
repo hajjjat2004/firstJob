@@ -1,6 +1,6 @@
 pipeline {
     
-    agent { label 'ci-cd' }
+    agent any
   
     stages {
         stage('Checkout Source') {
@@ -9,11 +9,11 @@ pipeline {
             }
          }
        
-          stage('start container') {
-              steps{
-                   script { 
-                        sh 'docker-compose up -d'
-                        sh 'docker run -d --restart unless-stopped hajjjat2004/epc'
+        stage('start container') {
+            steps{
+               script { 
+                   sh 'docker-compose up -d'
+                   sh 'docker run -d --restart unless-stopped hajjjat2004/epc'
                         
                    }
               
