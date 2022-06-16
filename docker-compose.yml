@@ -6,14 +6,14 @@ services:
     build:
       context: ./backend-development/epic-timesheet-and-leaves-comparison-backend-development/
       dockerfile: ./Dockerfile
-    image: "node:12.18.3"
+ 
     ports:
       - "3010:3010"
   frontend-development:
     build:
       context: ./frontend-development/epic-timesheet-and-leaves-comparison-frontend-development/
       dockerfile: ./Dockerfile
-    image: "node:12.18.3"
+    
     ports:
       - "3000:3000"
    
