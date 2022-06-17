@@ -16,29 +16,13 @@ pipeline {
                 
                 script {
                    sh 'ssh node@192.168.32.134'
+                   sh 'git clone https://github.com/hajjjat2004/firstjob /home/node/dd'
+                   sh 'cd /home/node/dd'
+                   sh 'docker-compose up -d'
                     
                 }
             }
           }
-         
-         
-         
-         
-        stage('start container') {
-            steps{
-               script { 
-                  
-                   
-                   sh 'sudo git clone https://github.com/hajjjat2004/firstjob /home/node/dd'
-                   sh 'cd /home/node/dd'
-                   sh 'docker-compose up -d'
-                   
-                       
-               }
-              
-           }
-         
-        }
          
     }
 }
