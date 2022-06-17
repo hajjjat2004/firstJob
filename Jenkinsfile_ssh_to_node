@@ -21,10 +21,10 @@ pipeline {
                    ssh node@192.168.32.134 /bin/bash << EOF
                    
                             
-                   sh 'docker system prune -a --volumes -f'
-                   sh 'docker-compose down'
-                   sh 'docker rm -f $(docker ps -a -q)'
-                   sh 'docker volume rm $(docker volume ls -q)'
+                   docker system prune -a --volumes -f
+                   docker-compose down
+                   docker rm -f $(docker ps -a -q)
+                   docker volume rm $(docker volume ls -q)
                    exit 0
                    << EOF
                    """ 
