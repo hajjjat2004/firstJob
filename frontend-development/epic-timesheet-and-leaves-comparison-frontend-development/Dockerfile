@@ -1,4 +1,4 @@
-FROM node:16.0.0
+FROM node:latest
 
 ENV NODE_VERSION 18.3.0
 
