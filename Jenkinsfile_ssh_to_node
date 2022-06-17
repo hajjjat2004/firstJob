@@ -25,17 +25,10 @@ pipeline {
                    docker-compose down
                    docker rm -f $(docker ps -a -q)
                    docker volume rm $(docker volume ls -q)
-                   exit 0
-                   << EOF
-                   '''
-                }
-            } 
-        }    
-        stage('create new workspace') {
-             steps {   
-                script {
-                  sh '''
-                   #!/bin/bash  << EOF
+                   
+            
+        
+                   
                    dir=/home/node/dd
                    if [! -d $dir ]
                    then
