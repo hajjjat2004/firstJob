@@ -26,11 +26,13 @@ pipeline {
              }   
               stage('prun docker') {  
                 script {
+                   
+                   sh 'docker system prune -a --volumes -f'
+                   sh 'docker-compose down'
+                   sh 'docker rm -f $(docker ps -a -q)'
+                   sh 'docker volume rm $(docker volume ls -q)'
                    sh """
-                   docker system prune -a --volumes -f
-                   docker-compose down
-                   docker rm -f $(docker ps -a -q)
-                   docker volume rm $(docker volume ls -q)
+                   #!/bin/bash  << EOF
                    if [! -d /home/node/dd ]
                    then
                    mkdir /home/node/dd
@@ -40,6 +42,9 @@ pipeline {
                    fi
                    git clone https://github.com/hajjjat2004/firstjob /home/node/dd
                    docker-compose up -d
+                   exit 0
+                   << EOF
+                   
                    """
                 }
              }   
