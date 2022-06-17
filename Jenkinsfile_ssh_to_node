@@ -16,12 +16,10 @@ pipeline {
                 
                 script {
                    sh 'ssh node@192.168.32.134'
-                   sh 'cd /var/jenkins_home/dd'
-                   sh 'docker-compose down'
                     
                 }
             }
-        }
+          }
          
          
          
@@ -29,7 +27,7 @@ pipeline {
         stage('start container') {
             steps{
                script { 
-                   sh 'rm -r /var/jenkins_home/dd'
+                  
                    sh 'mkdir /var/jenkins_home/dd'
                    sh 'git clone https://github.com/hajjjat2004/firstjob /var/jenkins_home/dd'
                    sh 'cd /var/jenkins_home/dd'
