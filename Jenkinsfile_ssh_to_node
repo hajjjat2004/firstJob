@@ -19,6 +19,7 @@ pipeline {
                    sh """
                    #!/bin/bash
                    ssh node@192.168.32.134 /bin/bash << EOF
+                   sudo -i
                    exit 0
                    << EOF
                    """
