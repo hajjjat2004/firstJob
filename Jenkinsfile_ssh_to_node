@@ -8,11 +8,11 @@ pipeline {
                 
                git branch: 'main', credentialsId: 'tokenjenkins', url: 'https://github.com/hajjjat2004/firstjob'
             }
-         }
+      }
          
-          stage('docker compose clean') {
+        stage('docker compose clean') {
             
-            steps{
+           steps{
                 
                 script {
                   
@@ -23,7 +23,8 @@ pipeline {
                    << EOF
                    """
                 }
-             }   
+             } 
+          }   
               stage('prun docker') {  
                 script {
                    
