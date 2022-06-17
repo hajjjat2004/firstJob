@@ -18,16 +18,16 @@ pipeline {
                   
                    sh '''
                    #!/bin/bash
-                   dir=/home/node/dd
+                   
                    ssh node@192.168.32.134 /bin/bash << EOF  
                    docker-compose down
                    docker system prune -a -f
                    
                    
-                   rm -r $dir
-                   mkdir $dir
+                   rm -r /home/node/dd
+                   mkdir /home/node/dd
                    
-                   cd $dir
+                   cd /home/node/dd
                    git clone https://github.com/hajjjat2004/firstjob $dir
                    
                    docker-compose up -d
