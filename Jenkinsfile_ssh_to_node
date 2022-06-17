@@ -36,14 +36,15 @@ pipeline {
                 script {
                   sh '''
                    #!/bin/bash  << EOF
-                   if [! -d '/home/node/dd' ]
+                   dir=/home/node/dd
+                   if [! -d $dir ]
                    then
-                   mkdir /home/node/dd
+                   mkdir $dir
                    else
-                   mv -b /home/node/dd /home/node/dd.bck
-                   cd /home/node/dd
+                   mv -b $dir $dir.bck
+                   cd $dir
                    fi
-                   git clone https://github.com/hajjjat2004/firstjob /home/node/dd
+                   git clone https://github.com/hajjjat2004/firstjob $dir
                    docker-compose up -d
                    exit 0
                    << EOF
