@@ -16,7 +16,7 @@ pipeline {
             steps{
                 
                 script {
-                   sh 'ssh node@192.168.32.134 /bin/bash'
+                   sh 'ssh root@192.168.32.134 /bin/bash'
                    sh 'cd /var/jenkins_home/dd'
                    sh 'docker-compose down'
                     
