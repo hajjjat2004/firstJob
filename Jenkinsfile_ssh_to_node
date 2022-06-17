@@ -19,21 +19,15 @@ pipeline {
                    sh """
                    #!/bin/bash
                    ssh node@192.168.32.134 /bin/bash << EOF
-                   sudo -i
-                   exit 0
-                   << EOF
-                   """
-                }
-             } 
-          }   
-        stage('prun docker') {  
-           steps {
-               script {
                    
+                            
                    sh 'docker system prune -a --volumes -f'
                    sh 'docker-compose down'
                    sh 'docker rm -f $(docker ps -a -q)'
                    sh 'docker volume rm $(docker volume ls -q)'
+                   exit 0
+                   << EOF
+                   """ 
                 }
             } 
         }    
