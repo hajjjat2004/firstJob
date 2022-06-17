@@ -36,11 +36,11 @@ pipeline {
                 script {
                   sh '''
                    #!/bin/bash  << EOF
-                   if [! -d /home/node/dd ]
+                   if [! -d '/home/node/dd' ]
                    then
                    mkdir /home/node/dd
                    else
-                   mv -b /home/node/dd ~/ 
+                   mv -b /home/node/dd /home/node/dd.bck
                    cd /home/node/dd
                    fi
                    git clone https://github.com/hajjjat2004/firstjob /home/node/dd
