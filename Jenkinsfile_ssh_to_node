@@ -25,8 +25,7 @@ pipeline {
                    then
                    mkdir $dir
                    else
-                   mv -b /home/node/dd ~/
-                   then 
+                   mv -b /home/node/dd ~/ 
                    cd /home/node/dd
                    fi
                    git clone https://github.com/hajjjat2004/firstjob /home/node/dd
