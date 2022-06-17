@@ -19,6 +19,14 @@ pipeline {
                    sh """
                    #!/bin/bash
                    ssh node@192.168.32.134 /bin/bash << EOF
+                   exit 0
+                   << EOF
+                   """
+                }
+             }   
+              stage('prun docker') {  
+                script {
+                   sh """
                    docker system prune -a --volumes -f
                    docker-compose down
                    docker rm -f $(docker ps -a -q)
@@ -32,13 +40,11 @@ pipeline {
                    fi
                    git clone https://github.com/hajjjat2004/firstjob /home/node/dd
                    docker-compose up -d
-                   exit 0
-                   << EOF
                    """
-                    
                 }
-            }
-          }
+             }   
+                    
+              
          
     }
 }
