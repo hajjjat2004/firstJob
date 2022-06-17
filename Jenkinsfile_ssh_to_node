@@ -15,12 +15,12 @@ pipeline {
             steps{
                 
                 script {
-                 
+                  dir=/home/node/dd
                    sh """
                    #!/bin/bash
                    ssh node@192.168.32.134 /bin/bash << EOF
                    docker system prune -a --volumes -f
-                   dir=/home/node/dd
+                  
                    if [! -d $dir ]
                    then
                    mkdir $dir
