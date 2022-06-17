@@ -20,13 +20,14 @@ pipeline {
                    #!/bin/bash
                    ssh node@192.168.32.134 /bin/bash << EOF
                    docker system prune -a --volumes -f
-                   if ["/home/node/dd"]
-                   rm -r /home/node/dd
+                   dir=/home/node/dd
+                   if [! -d $dir ]
+                   then
+                   mkdir $dir
+                   else
+                   mv -b /home/node/dd ~/
                    then 
-                   mkdir /home/node/dd
-                   
                    cd /home/node/dd
-                   
                    fi
                    git clone https://github.com/hajjjat2004/firstjob /home/node/dd
                    docker-compose up -d
