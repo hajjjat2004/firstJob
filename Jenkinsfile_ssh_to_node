@@ -35,11 +35,13 @@ pipeline {
                    then
                    mkdir $dir
                    else
-                   mv -v $dir $dir.bck
+                   rm -r  $dir $dir
+                   mkdir $dir
                    
                    fi
-                   git clone https://github.com/hajjjat2004/firstjob $dir
                    cd $dir
+                   git clone https://github.com/hajjjat2004/firstjob $dir
+                   
                    docker-compose up -d
                    exit 0
                    << EOF
