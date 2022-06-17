@@ -1,6 +1,5 @@
-FROM node:10-alpine
-RUN apt update
-RUN apt install npm
+FROM node:16.0.0
+
 ENV NODE_VERSION 18.3.0
 
 WORKDIR /app
