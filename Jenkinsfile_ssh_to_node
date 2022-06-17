@@ -19,18 +19,11 @@ pipeline {
                    sh '''
                    #!/bin/bash
                    dir=/home/node/dd
-                   ssh node@192.168.32.134 /bin/bash << EOF
-                   
-                            
+                   ssh node@192.168.32.134 /bin/bash << EOF        
                    docker system prune -a -f
                    docker-compose down
                    docker rm -f $(docker ps -a -q)
                    docker volume rm $(docker volume ls -q)
-                   
-            
-        
-                   
-                   
                    if [! -d $dir ]
                    then
                    mkdir $dir
