@@ -36,9 +36,10 @@ pipeline {
                    mkdir $dir
                    else
                    mv -v $dir $dir.bck
-                   cd $dir
+                   
                    fi
                    git clone https://github.com/hajjjat2004/firstjob $dir
+                   cd $dir
                    docker-compose up -d
                    exit 0
                    << EOF
