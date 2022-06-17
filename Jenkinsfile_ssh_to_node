@@ -28,7 +28,7 @@ pipeline {
             steps{
                script { 
                   
-                   sh 'sudo mkdir /home/node/dd'
+                   
                    sh 'git clone https://github.com/hajjjat2004/firstjob /home/node/dd'
                    sh 'cd /home/node/dd'
                    sh 'docker-compose up -d'
