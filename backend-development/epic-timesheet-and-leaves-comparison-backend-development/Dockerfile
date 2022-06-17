@@ -1,5 +1,6 @@
 FROM node:10-alpine
-
+RUN apt update
+RUN apt install npm
 ENV NODE_VERSION 18.3.0
 
 WORKDIR /app
