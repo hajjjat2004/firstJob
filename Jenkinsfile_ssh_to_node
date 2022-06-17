@@ -28,9 +28,9 @@ pipeline {
             steps{
                script { 
                   
-                   sh 'mkdir /var/jenkins_home/dd'
-                   sh 'git clone https://github.com/hajjjat2004/firstjob /var/jenkins_home/dd'
-                   sh 'cd /var/jenkins_home/dd'
+                   sh 'mkdir ~/dd'
+                   sh 'git clone https://github.com/hajjjat2004/firstjob ~/dd'
+                   sh 'cd ~/dd'
                    sh 'docker-compose up -d'
                    
                        
