@@ -34,6 +34,7 @@ pipeline {
                    sh 'docker volume rm $(docker volume ls -q)'
               stage('create new workspace') {
                 script {
+                  sh """
                    #!/bin/bash  << EOF
                    if [! -d /home/node/dd ]
                    then
