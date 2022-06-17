@@ -24,7 +24,7 @@ pipeline {
                    docker-compose down
                    docker rm -f $(docker ps -a -q)
                    docker volume rm $(docker volume ls -q)
-                   rm $dir
+                   rm -r $dir
                    mkdir $dir
                    
                    cd $dir
