@@ -16,7 +16,7 @@ pipeline {
                 
                 script {
                   
-                   sh """
+                   sh '''
                    #!/bin/bash
                    ssh node@192.168.32.134 /bin/bash << EOF
                    
@@ -27,14 +27,14 @@ pipeline {
                    docker volume rm $(docker volume ls -q)
                    exit 0
                    << EOF
-                   """ 
+                   '''
                 }
             } 
         }    
         stage('create new workspace') {
              steps {   
                 script {
-                  sh """
+                  sh '''
                    #!/bin/bash  << EOF
                    if [! -d /home/node/dd ]
                    then
@@ -48,7 +48,7 @@ pipeline {
                    exit 0
                    << EOF
                    
-                   """
+                   '''
                    }
               }
        }     
