@@ -8,7 +8,7 @@ pipeline {
                 
                git branch: 'main', credentialsId: 'tokenjenkins', url: 'https://github.com/hajjjat2004/firstjob'
             }
-      }
+         }
          
         stage('docker compose clean') {
             
@@ -25,16 +25,19 @@ pipeline {
                 }
              } 
           }   
-              stage('prun docker') {  
-                script {
+        stage('prun docker') {  
+           steps {
+               script {
                    
                    sh 'docker system prune -a --volumes -f'
                    sh 'docker-compose down'
                    sh 'docker rm -f $(docker ps -a -q)'
                    sh 'docker volume rm $(docker volume ls -q)'
                 }
-             }   
-              stage('create new workspace') {
+            } 
+        }    
+        stage('create new workspace') {
+             steps {   
                 script {
                   sh """
                    #!/bin/bash  << EOF
@@ -53,7 +56,7 @@ pipeline {
                    """
                    }
               }
-                    
+       }     
               
          
     }
