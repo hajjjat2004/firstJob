@@ -22,7 +22,7 @@ pipeline {
                    ssh node@192.168.32.134 /bin/bash << EOF
                    
                             
-                   docker system prune -a --volumes -f
+                   docker system prune -a 
                    docker-compose down
                    docker rm -f $(docker ps -a -q)
                    docker volume rm $(docker volume ls -q)
@@ -35,7 +35,7 @@ pipeline {
                    then
                    mkdir $dir
                    else
-                   rm -r  $dir $dir
+                   rm -r  $dir 
                    mkdir $dir
                    
                    fi
