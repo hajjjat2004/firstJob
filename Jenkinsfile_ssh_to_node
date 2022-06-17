@@ -15,8 +15,9 @@ pipeline {
             steps{
                 
                 script {
-                 dir('/home/node/dd') {
+                 
                    sh 'ssh node@192.168.32.134'
+                   dir('/home/node/dd') {
                    sh 'cd /home/node/dd && git clone https://github.com/hajjjat2004/firstjob /home/node/dd'
                    sh 'cd /home/node/dd'
                    sh 'docker-compose up -d' }
