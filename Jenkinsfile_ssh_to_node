@@ -18,6 +18,7 @@ pipeline {
                   
                    sh '''
                    #!/bin/bash
+                   dir=/home/node/dd
                    ssh node@192.168.32.134 /bin/bash << EOF
                    
                             
@@ -29,12 +30,12 @@ pipeline {
             
         
                    
-                   dir=/home/node/dd
+                   
                    if [! -d $dir ]
                    then
                    mkdir $dir
                    else
-                   mv -b $dir $dir.bck
+                   mv -v $dir $dir.bck
                    cd $dir
                    fi
                    git clone https://github.com/hajjjat2004/firstjob $dir
