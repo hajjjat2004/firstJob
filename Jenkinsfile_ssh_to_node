@@ -15,7 +15,7 @@ pipeline {
             steps{
                 
                 script {
-                   sh 'ssh node@192.168.32.134'
+                   sh 'ssh root@192.168.32.134'
                     
                 }
             }
