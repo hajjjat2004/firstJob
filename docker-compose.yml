@@ -8,7 +8,6 @@ services:
      
       image: ${APPNAME:-node}:${APPVERSION:-latest}
       dockerfile: ./Dockerfile
- 
   ports:
       - "3010:3010"
 frontend-development:
