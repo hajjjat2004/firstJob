@@ -6,7 +6,7 @@ services:
       volumes: 
         - /home/node:/app  
       ports:
-        - "3010:3010"
+        - 3010:3010
       tty: true  
       
         
@@ -16,7 +16,7 @@ services:
       volumes: 
         - /home/node:/app  
       ports:
-        - "3000:3000"
+        - 3000:3000
       tty: true  
 volumes:
   backend-development:
