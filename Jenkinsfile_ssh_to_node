@@ -16,10 +16,11 @@ pipeline {
                 
                 script {
                   
-                   sh '''
-                   #!/bin/bash
+                  
                    
                    ssh node@192.168.32.134 /bin/bash << EOF  
+                   sh '''
+                   #!/bin/bash
                    cd /home/node/dd
                    docker-compose down
                    docker system prune -a -f
@@ -32,10 +33,11 @@ pipeline {
                    git clone https://github.com/hajjjat2004/firstjob /home/node/dd
                    
                    docker-compose up -d
+                   ...
                    exit 0
                    << EOF
                    
-                   '''
+                   
                    }
               }
        }     
