@@ -4,16 +4,16 @@ services:
   backend-development:
       image: ${APPNAME:-node}:${APPVERSION:-latest}
       build: 
-        context: backend-development                                                                   
-        dockerfile: ./epic-timesheet-and-leaves-comparison-backend-development
+        context: ./backend-development/epic-timesheet-and-leaves-comparison-backend-development/                                                                  
+         
       ports:
         - "3010:3010"
         
   frontend-development:
       image: ${APPNAME:-node}:${APPVERSION:-latest}
       build: 
-        context: frontend-development
-        dockerfile: ./epic-timesheet-and-leaves-comparison-frontend-development                                              
+        context: ./frontend-development/epic-timesheet-and-leaves-comparison-frontend-development/
+                                                       
       ports:
         - "3000:3000"
    
