@@ -8,6 +8,8 @@ services:
          
       ports:
         - "3010:3010"
+      volumes: 
+        - .:/app
         
   frontend-development:
       
@@ -15,4 +17,7 @@ services:
         context: ./frontend-development/epic-timesheet-and-leaves-comparison-frontend-development/
       ports:
         - "3000:3000"
+        
+      volumes: 
+        - .:/app  
    
