@@ -8,7 +8,7 @@ services:
      
       image: ${APPNAME:-node}:${APPVERSION:-latest}
       dockerfile: ./Dockerfile
-  ports:
+      ports:
       - "3010:3010"
 frontend-development:
   build:
@@ -17,6 +17,6 @@ frontend-development:
       image: ${APPNAME:-node}:${APPVERSION:-latest}
       dockerfile: ./Dockerfile
     
-  ports:
+      ports:
       - "3000:3000"
    
