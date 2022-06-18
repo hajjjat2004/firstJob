@@ -2,21 +2,14 @@ version: '3'
 
 services:
   backend-development:
+      image: ${APPNAME:-node}:${APPVERSION:-latest}
+      dockerfile: ./backend-development/epic-timesheet-and-leaves-comparison-backend-development/
+      ports:
+        - "3010:3010"
+  frontend-development:
+      image: ${APPNAME:-node}:${APPVERSION:-latest}
+      dockerfile: ./Dockerfile
     
-   build:
-      context: ./backend-development/epic-timesheet-and-leaves-comparison-backend-development/
-     
-   image: ${APPNAME:-node}:${APPVERSION:-latest}
-   dockerfile: ./Dockerfile
-   ports:
-    - "3010:3010"
- frontend-development:
-  build:
-      context: ./frontend-development/epic-timesheet-and-leaves-comparison-frontend-development/
-      
-  image: ${APPNAME:-node}:${APPVERSION:-latest}
-  dockerfile: ./Dockerfile
-    
-  ports:
-      - "3000:3000"
+      ports:
+        - "3000:3000"
    
