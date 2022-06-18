@@ -17,9 +17,9 @@ pipeline {
                 script {
                   
                   
-                   
-                   ssh node@192.168.32.134 /bin/bash << EOF  
                    sh '''
+                   ssh node@192.168.32.134 /bin/bash << EOF  
+                   
                    #!/bin/bash
                    mkdir /home/node/dd
                    cd /home/node/dd
@@ -29,9 +29,10 @@ pipeline {
                    git clone https://github.com/hajjjat2004/firstjob /home/node/dd
                    
                    docker-compose up -d
-                   ...
+                   
                    exit 0
                    << EOF
+                   ...
                    
                    
                    }
