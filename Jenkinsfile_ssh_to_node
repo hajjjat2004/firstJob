@@ -18,7 +18,7 @@ pipeline {
                   
                   
                    
-                   sh ...#!/bin/bash
+                   sh ... #!/bin/bash
                    ssh node@192.168.32.134 /bin/bash << EOF 
                   
                   
