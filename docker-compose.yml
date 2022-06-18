@@ -1,7 +1,31 @@
-version '3'
+version: '3'
+
 services:
-  app:
-    image: nginx:alpine
-    ports:
-      - 80:80
-    
+  backend-development:
+      
+      build: 
+        context: ./backend-development/epic-timesheet-and-leaves-comparison-backend-development/    
+        
+      volumes: 
+        - /home/node:/app  
+         
+      ports:
+        - "3010:3010"
+      
+        
+  frontend-development:
+      
+      build: 
+        context: ./frontend-development/epic-timesheet-and-leaves-comparison-frontend-development/
+      volumes: 
+        - /home/node:/app  
+        
+      ports:
+        - "3000:3000"
+        
+volumes:
+  backend-development:
+  frontend-development:
+        
+        
+   
