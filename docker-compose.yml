@@ -11,8 +11,8 @@ services:
  
     ports:
       - "3010:3010"
-  frontend-development:
-    build:
+frontend-development:
+  build:
       context: ./frontend-development/epic-timesheet-and-leaves-comparison-frontend-development/
       container_name: ${APPNAME:-node}
       image: ${APPNAME:-node}:${APPVERSION:-latest}
