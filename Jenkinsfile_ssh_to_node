@@ -1,6 +1,11 @@
 pipeline {
     
     agent any
+    
+     environment {
+        DIR = '/home/node/dd'
+        
+    }
   
     stages {
         stage('Checkout Source') {
@@ -18,21 +23,20 @@ pipeline {
                   
                   
                    
-                   sh ... #!/bin/bash
-                   ssh node@192.168.32.134 /bin/bash << EOF 
-                  
-                  
-                   mkdir /home/node/dd
-                   cd /home/node/dd
+                   
+                   sh '''ssh node@192.168.32.134 /bin/bash << EOF 
+                   #!/bin/bash
+                   cd ${DIR}
                    docker-compose down
                    docker system prune -a -f
-                  
-                   git clone https://github.com/hajjjat2004/firstjob /home/node/dd
+                    rm -rf ${DIR}
+                    mkdir ${DIR}
+                    cd ${DIR}
+                    git clone https://github.com/hajjjat2004/firstJob.git ${DIR}
+                    docker-compose up -d
+                    docker ps -a
+                   << EOF'''
                    
-                   docker-compose up -d
-                   
-                   exit 0
-                   << EOF...
                    
                    
                    
@@ -43,5 +47,4 @@ pipeline {
          
     }
 }
-    
     
