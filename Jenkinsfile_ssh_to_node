@@ -26,7 +26,7 @@ pipeline {
                    
                    sh '''ssh node@192.168.32.134 /bin/bash << EOF 
                    #!/bin/bash
-                   echo 'hello'
+                   echo 'hello there!'
                    cd ${DIR}
                    docker-compose down
                    docker system prune -a -f
