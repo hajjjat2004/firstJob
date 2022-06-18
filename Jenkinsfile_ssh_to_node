@@ -17,8 +17,8 @@ pipeline {
                 script {
                   
                   
-                   sh '''
-                   #!/bin/bash
+                   
+                   sh ...#!/bin/bash
                    ssh node@192.168.32.134 /bin/bash << EOF 
                   
                   
@@ -32,8 +32,8 @@ pipeline {
                    docker-compose up -d
                    
                    exit 0
-                   << EOF
-                   ...
+                   << EOF...
+                   
                    
                    
                    }
