@@ -1,0 +1,12 @@
+version '3'
+
+volumes:
+  web_data:
+
+services:
+  app:
+    image: nginx:alpine
+    ports:
+      - 80:80
+    volumes:
+      - web_data:/usr/share/nginx/html:ro
