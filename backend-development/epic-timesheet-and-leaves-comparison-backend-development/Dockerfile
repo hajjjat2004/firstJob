@@ -1,4 +1,4 @@
-FROM node:latest
+FROM  hajjjat2004/dd_backend-development:latest
 
 ENV NODE_VERSION 18.3.0
 
