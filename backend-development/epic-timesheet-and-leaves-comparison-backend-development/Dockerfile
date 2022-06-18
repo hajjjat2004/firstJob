@@ -11,6 +11,4 @@ RUN npm install nodemon -y
    
 COPY . .
 
-EXPOSE 3010
-
 CMD ["node", "app.js"]
