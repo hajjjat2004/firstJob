@@ -5,7 +5,7 @@ services:
     
     build:
       context: ./backend-development/epic-timesheet-and-leaves-comparison-backend-development/
-      container_name: ${APPNAME:-node}
+     
       image: ${APPNAME:-node}:${APPVERSION:-latest}
       dockerfile: ./Dockerfile
  
@@ -14,7 +14,7 @@ services:
 frontend-development:
   build:
       context: ./frontend-development/epic-timesheet-and-leaves-comparison-frontend-development/
-      container_name: ${APPNAME:-node}
+      
       image: ${APPNAME:-node}:${APPVERSION:-latest}
       dockerfile: ./Dockerfile
     
