@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY ["package.json", "package-lock.json", "./"]
 RUN ls
-RUN npm install --production
+RUN npm install 
 COPY . .
 
 EXPOSE 3000
