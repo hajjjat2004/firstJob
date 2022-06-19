@@ -51,7 +51,7 @@ function App(props) {
       row2: parseInt(et.row2.value - 1), // starting row
     }
 
-    const data = await axios.post(`http://localhost:3010/compare`, obj);
+    const data = await axios.post(`http://192.168.32.134:3010/compare`, obj);
 
     setTables(data.data);
     setFirstBtn(false);
